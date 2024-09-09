@@ -1,53 +1,27 @@
 const path = require("path");
 const winston = require("winston");
-
 require("winston-daily-rotate-file");
 
 const timestampFormat = winston.format.combine(
-  winston.format.timestamp({
-    format: "YYYY-MM-DD_HH:mm:ss",
-  }),
+  winston.format.timestamp({ format: "YYYY-MM-DD_HH:mm:ss" }),
   winston.format.json()
 );
 
-const formatTransportType = (type) => {
-  return new winston.transports.DailyRotateFile({
-    filename: path.join(__dirname, `./logs/%DATE%.log`),
-    datePattern: "YYYY-MM-DD",
-    level: type,
-    format: winston.format.combine(
-      winston.format.errors({
-        stack: true,
-      }),
-      winston.format.json()
-    ),
-  });
-};
+const createDailyRotateFileTransport = (level) => new winston.transports.DailyRotateFile({
+  filename: path.join(__dirname, `./logs/%DATE%.log`),
+  datePattern: "YYYY-MM-DD",
+  level: level,
+  format: winston.format.combine(
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+});
 
-const levels = {
-  error: 1,
-  debug: 1,
-  info: 2,
-  load: 2,
-};
+const levels = { error: 1, debug: 1, info: 2, load: 2 };
+const colors = { error: "red", debug: "yellow", info: "green", load: "blue" };
+const emoji = { error: "❌", debug: "🛠️", info: "✔️ ", load: "⏳" };
 
-const colors = {
-  error: "red",
-  debug: "yellow",
-  info: "green",
-  load: "blue",
-};
-
-const emoji = {
-  error: "❌",
-  debug: "🛠️",
-  info: "✔️ ",
-  load: "⏳",
-};
-
-const addEmojiToMessage = (level, message) => {
-  return `${emoji[level]} ${message}`;
-};
+const addEmojiToMessage = (level, message) => `${emoji[level]} ${message}`;
 
 const createLogger = (level) => {
   const logger = winston.createLogger({
@@ -55,12 +29,10 @@ const createLogger = (level) => {
     level: level,
     levels: levels,
     transports: [
-      formatTransportType(level),
+      createDailyRotateFileTransport(level),
       new winston.transports.Console({
         format: winston.format.combine(
-          winston.format.colorize({
-            colors: colors,
-          }),
+          winston.format.colorize({ colors: colors }),
           winston.format.simple()
         ),
       }),
