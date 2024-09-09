@@ -11,25 +11,26 @@ A simple and configurable logger using Winston with daily rotating file support 
 
 ## Installation
 
-1. Clone the repository:
+1. Télécharger la dernière version depuis le [GitHub](https://github.com/light2k4/logger/releases/latest).
+
+2. Extraire le fichier téléchargé et naviguer dans le répertoire extrait:
     ```sh
-    git clone https://github.com/yourusername/logger.git
-    cd logger
+    cd path/to/extracted/logger
     ```
 
-2. Install the dependencies:
+3. Installer les dépendances:
     ```sh
-    npm install
+    yarn install
     ```
 
 ## Usage
 
-1. Import the logger in your project:
+1. Importer le logger dans votre projet:
     ```javascript
     const logger = require('./path/to/logger');
     ```
 
-2. Use the logger to log messages:
+2. Utiliser le logger pour enregistrer des messages:
     ```javascript
     logger.error('This is an error message');
     logger.debug('This is a debug message');
@@ -39,7 +40,7 @@ A simple and configurable logger using Winston with daily rotating file support 
 
 ## Log Levels
 
-The logger supports the following log levels, each with a corresponding emoji:
+Le logger supporte les niveaux de log suivants, chacun avec un emoji correspondant:
 
 - `error`: ❌
 - `debug`: 🛠️
@@ -48,7 +49,22 @@ The logger supports the following log levels, each with a corresponding emoji:
 
 ## Configuration
 
-The logger is configured to use daily rotating log files and console logging with colorized output. The log files are stored in the `./logs` directory with a date pattern of `YYYY-MM-DD`.
+Le logger utilise un fichier de configuration `config.json` pour définir divers paramètres. Voici un exemple de fichier `config.json` :
+
+```json
+{
+  "logDir": "logs",
+  "maxSize": "20m",
+  "maxFiles": "14d",
+  "logLevel": "info"
+}
+```
+
+### Explication des paramètres de configuration
+`logDir`: Le répertoire où les fichiers de log seront stockés.
+`maxSize`: La taille maximale d'un fichier de log avant qu'il ne soit rotatif. Par exemple, "20m" signifie 20 mégaoctets.
+`maxFiles`: Le nombre maximum de fichiers de log à conserver. Par exemple, "14d" signifie conserver les fichiers des 14 derniers jours.
+`logLevel`: Le niveau de log par défaut. Les niveaux disponibles sont error, debug, info, et load.
 
 ## Example
 
