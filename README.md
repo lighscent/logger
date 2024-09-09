@@ -71,10 +71,11 @@ Le logger utilise un fichier de configuration `config.json` pour définir divers
 ```
 
 ### Explication des paramètres de configuration
-`logDir`: Le répertoire où les fichiers de log seront stockés.
-`maxSize`: La taille maximale d'un fichier de log avant qu'il ne soit rotatif. Par exemple, "20m" signifie 20 mégaoctets.
-`maxFiles`: Le nombre maximum de fichiers de log à conserver. Par exemple, "14d" signifie conserver les fichiers des 14 derniers jours.
-`logLevel`: Le niveau de log par défaut. Les niveaux disponibles sont error, debug, info, et load.
+
+- `logDir`: Le répertoire où les fichiers de log seront stockés.
+- `maxSize`: La taille maximale d'un fichier de log avant qu'il ne soit rotatif. Par exemple, "20m" signifie 20 mégaoctets.
+- `maxFiles`: Le nombre maximum de fichiers de log à conserver. Par exemple, "14d" signifie conserver les fichiers des 14 derniers jours.
+- `logLevel`: Le niveau de log par défaut. Les niveaux disponibles sont error, debug, info, et load.
 
 ## Example
 
