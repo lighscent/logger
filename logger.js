@@ -38,6 +38,17 @@ const colors = {
   load: "blue",
 };
 
+const emoji = {
+  error: "❌",
+  debug: "🛠️",
+  info: "✔️ ",
+  load: "⏳",
+};
+
+const addEmojiToMessage = (level, message) => {
+  return `${emoji[level]} ${message}`;
+};
+
 const createLogger = (level) => {
   const logger = winston.createLogger({
     format: timestampFormat,
@@ -56,7 +67,7 @@ const createLogger = (level) => {
     ],
   });
 
-  return (message, data = {}) => logger.log(level, message, data);
+  return (message, data = {}) => logger.log(level, addEmojiToMessage(level, message), data);
 };
 
 module.exports = {
