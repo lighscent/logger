@@ -1,0 +1,6 @@
+{
+    "logLevel": "info",
+    "logDir": "./logs",
+    "maxSize": "20m",
+    "maxFiles": "14d"
+  }

@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\dev\\Desktop\\logger.js\\logs\\.fa1553547551a29ed6900b69daaca38d643c95a6-audit.json",
+    "files": [
+        {
+            "date": 1725887423099,
+            "name": "C:\\Users\\dev\\Desktop\\logger.js\\logs\\2024-09-09.log",
+            "hash": "7575eb9c17794356d0fce7bfb487889867559a9074c416898286ddc602c3bfb7"
+        }
+    ],
+    "hashType": "sha256"
+}

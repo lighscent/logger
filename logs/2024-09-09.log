@@ -1,0 +1,4 @@
+{"level":"error","message":"❌ This is an error message","timestamp":"2024-09-09_15:10:23"}
+{"level":"debug","message":"🛠️  This is a debug message","timestamp":"2024-09-09_15:10:23"}
+{"level":"info","message":"✔️  This is an info message","timestamp":"2024-09-09_15:10:23"}
+{"level":"load","message":"⏳ This is a load message","timestamp":"2024-09-09_15:10:23"}
