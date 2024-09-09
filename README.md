@@ -13,14 +13,24 @@ A simple and configurable logger using Winston with daily rotating file support 
 
 1. Télécharger la dernière version depuis le [GitHub](https://github.com/light2k4/logger/releases/latest).
 
-2. Extraire le fichier téléchargé et naviguer dans le répertoire extrait:
+2. Extraire les fichiers `logger.js` et `config.json` à la racine de votre projet:
     ```sh
-    cd path/to/extracted/logger
+    cd path/to/your/project
+    unzip path/to/downloaded/logger.zip -d .
     ```
+
+### Avec Yarn
 
 3. Installer les dépendances:
     ```sh
-    yarn install
+    yarn install winston winston-daily-rotate-file
+    ```
+
+### Avec NPM
+
+3. Installer les dépendances:
+    ```sh
+    npm install winston winston-daily-rotate-file
     ```
 
 ## Usage
