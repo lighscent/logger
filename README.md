@@ -59,6 +59,7 @@ logger.error('This is an error message', { additional: 'data' });
 logger.debug('This is a debug message');
 logger.info('This is an info message');
 logger.load('This is a load message');
+```
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
