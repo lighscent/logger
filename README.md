@@ -23,7 +23,7 @@ A simple and configurable logger using Winston with daily rotating file support 
 
 3. Installer les dépendances:
     ```sh
-    yarn install winston winston-daily-rotate-file
+    yarn add winston winston-daily-rotate-file
     ```
 
 ### Avec NPM
